@@ -117,8 +117,7 @@ public class Student {
 
 
         for (int i = 0; i < lastElementOfSubjects; i++) {
-            if ((containerOfSubjects[i].getName()).equals(searchingSubject.getName())
-                    && (containerOfSubjects[i].getName()).equals(searchingSubject.getName())) {
+            if ((containerOfSubjects[i].getName()).equals(searchingSubject.getName())) {
                 return true;
             }
         }

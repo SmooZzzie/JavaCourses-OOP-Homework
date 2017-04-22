@@ -1,4 +1,4 @@
-package week1.classwork.task.candidateTask;
+package week1.classwork;
 
 
 import week1.classwork.task.candidateTask.model.Candidate;

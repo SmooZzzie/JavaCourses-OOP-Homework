@@ -1,4 +1,4 @@
-package week1.task2.tests;
+package week1.task2;
 
 import week1.task2.model.Student;
 import week1.task2.model.Subject;
