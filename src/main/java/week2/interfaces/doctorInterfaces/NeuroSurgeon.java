@@ -8,9 +8,13 @@ public class NeuroSurgeon implements Doctor{
     private String name;
     private int experienceAsNeuroSurgeon;
 
-    public NeuroSurgeon(String name, int overallExperienceAsSurgeon) {
+    public NeuroSurgeon(String name, int experienceAsNeuroSurgeon) {
         this.name = name;
-        this.experienceAsNeuroSurgeon = overallExperienceAsSurgeon;
+        this.experienceAsNeuroSurgeon = experienceAsNeuroSurgeon;
+    }
+
+    public int getExperienceAsNeuroSurgeon() {
+        return experienceAsNeuroSurgeon;
     }
 
     @Override

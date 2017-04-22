@@ -13,6 +13,10 @@ public class Surgeon implements Doctor {
         this.overallExperienceAsSurgeon = overallExperienceAsSurgeon;
     }
 
+    public int getOverallExperienceAsSurgeon() {
+        return overallExperienceAsSurgeon;
+    }
+
     @Override
     public String getName() {
         return this.name;
