@@ -7,7 +7,7 @@ import static week1.task3.utils.CommonUtils.checkOnNull;
  */
 public class Parking {
 
-    private final int PARKING_PLACES = 10;
+    private static final int PARKING_PLACES = 10;
 
     private String address;
     private Bike[] parkedBikes = new Bike[PARKING_PLACES];
