@@ -1,4 +1,4 @@
-package week2.equals;
+package week2.task5_7Equals_Comparable;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * Created by SmooZzzie on 24.04.2017.
  */
-public class TestUniversity {
+public class UniversityTest {
 
     University testUniversity;
 
@@ -62,6 +62,19 @@ public class TestUniversity {
         testGroup.getStudents()[2] = new Student("testName11", "testSurname11");
 
         Assert.assertTrue(testUniversity.addGroup(testGroup));
+    }
+
+    @Test
+    public void test_add_other_group_with_same_one_student () {
+
+        Group testGroup = new Group();
+        testGroup.setActualGroupSize(2);
+
+        testGroup.getStudents()[0] = new Student();
+        testGroup.getStudents()[1] = new Student("testName101", "testSurname101");
+
+        Assert.assertTrue(testUniversity.addGroup(testGroup));
+
     }
 
 }

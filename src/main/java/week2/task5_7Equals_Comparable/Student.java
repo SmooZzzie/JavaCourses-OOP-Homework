@@ -1,9 +1,9 @@
-package week2.equals;
+package week2.task5_7Equals_Comparable;
 
 /**
  * Created by SmooZzzie on 24.04.2017.
  */
-public class Student {
+public class Student implements Comparable<Student> {
 
     private String studentName;
     private String studentSurname;
@@ -39,11 +39,29 @@ public class Student {
 
         Student other = (Student) obj;
 
-        if(studentName.equals(other.studentName) && studentSurname.equals(other.studentSurname)) {
+        if (studentName.equals(other.studentName) && studentSurname.equals(other.studentSurname)) {
             return true;
         }
 
         return false;
 
+    }
+
+    @Override
+    public int compareTo(Student nextSt) {
+
+        int nameComparing = studentName.compareTo(nextSt.studentName);
+        int surnameComparing = studentSurname.compareTo(nextSt.studentSurname);
+
+        if (nameComparing == 0) {
+            return surnameComparing;
+        } else return nameComparing;
+    }
+
+    @Override
+    public String toString() {
+        return "Student " +
+                studentName + " " +
+                studentSurname;
     }
 }

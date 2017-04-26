@@ -1,4 +1,4 @@
-package week2.equals;
+package week2.task5_7Equals_Comparable;
 
 /**
  * Created by SmooZzzie on 24.04.2017.
@@ -10,6 +10,7 @@ public class Group {
     private String groupName;
     private Student[] students;
     private int actualGroupSize;
+    private boolean checkAreSame;
 
     public Group() {
         this.groupName = "TestGroupName";
@@ -56,6 +57,24 @@ public class Group {
         return false;
     }
 
+    public void sort() {
+        for (int i = 0; i < actualGroupSize; i++) {
+            for (int j = 0; j < actualGroupSize - 1; j++) {
+                if (students[j].compareTo(students[j+1]) > 0) {
+                    swap(j,j+1);
+                }
+            }
+        }
+    }
+
+    private void swap(int j, int i) {
+
+        Student temp = students[j];
+
+        students[j] = students[i];
+        students[i] = temp;
+    }
+
     @Override
     public boolean equals(Object obj) {
 
@@ -69,24 +88,36 @@ public class Group {
 
         Group other = (Group) obj;
 
-        // по логике программы,
-        // если размер групп не совпадает --> они автоматически разные и не "равны"
-        // если один и тот же студент появился в обеих проверяемых на равность группах --> они равны,
-        // так как один и тот же студент не может числиться в нескольких группах
-
         if (actualGroupSize != other.actualGroupSize) {
             return false;
         }
 
         for (int i = 0; i < actualGroupSize; i++) {
+            checkAreSame = false;
+
             for (int j = 0; j < actualGroupSize; j++) {
-               if (students[i].equals(other.students[j])) {
-                   return true;
-               }
+                if (students[i].equals(other.students[j])) {
+                    checkAreSame = true;
+                }
             }
+            if (checkAreSame) {
+                continue;
+            }
+            return false;
         }
 
-        return false;
+        return true;
     }
 
+    @Override
+    public String toString() {
+
+        String result = "";
+
+        for (int i = 0; i < actualGroupSize; i++) {
+            result+=students[i].toString() + "\n";
+        }
+
+        return result;
+    }
 }
