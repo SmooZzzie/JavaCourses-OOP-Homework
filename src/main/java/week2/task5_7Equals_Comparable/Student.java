@@ -51,11 +51,13 @@ public class Student implements Comparable<Student> {
     public int compareTo(Student nextSt) {
 
         int nameComparing = studentName.compareTo(nextSt.studentName);
-        int surnameComparing = studentSurname.compareTo(nextSt.studentSurname);
+
 
         if (nameComparing == 0) {
-            return surnameComparing;
-        } else return nameComparing;
+            return studentSurname.compareTo(nextSt.studentSurname);
+        } else {
+            return nameComparing;
+        }
     }
 
     @Override
