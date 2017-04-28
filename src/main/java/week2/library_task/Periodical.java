@@ -9,7 +9,7 @@ public class Periodical extends Edition {
     private Periodicity periodicity;
 
     public Periodical() {
-        super();
+        super("testName", 1111);
         this.type = PeriodicalType.MAGAZINE;
         this.periodicity = Periodicity.WEEKLY;
     }
@@ -27,4 +27,9 @@ public class Periodical extends Edition {
         this.type = type;
         this.periodicity = periodicity;
     }
+
+    public final String info() {
+        return super.toString() + " " + type + " " + periodicity + super.getEditionReaders().toString();
+    }
+
 }

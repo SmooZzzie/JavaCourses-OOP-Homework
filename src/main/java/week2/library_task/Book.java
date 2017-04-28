@@ -9,9 +9,9 @@ public class Book extends Edition{
     private BookGenre genre;
 
     public Book() {
-        super();
+        super("testName",1111);
         this.author = "TestAuthor";
-        this.genre = BookGenre.FANTASY;
+        this.genre = BookGenre.FICTION;
     }
 
     // constructor with default quantity
@@ -26,5 +26,9 @@ public class Book extends Edition{
         super(editionName, yearOfPublishing, quantity);
         this.author = author;
         this.genre = genre;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 }
