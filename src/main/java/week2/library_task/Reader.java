@@ -23,6 +23,10 @@ public class Reader implements Comparable<Reader> {
         readerEditions = new ArrayList<>(MAX_QUANTITY_OF_EDITIONS);
     }
 
+    public Reader(String name) {
+        this.name = name;
+    }
+
     public Reader(String name, String surname) {
         this.name = name;
         this.surname = surname;
