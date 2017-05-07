@@ -3,6 +3,7 @@ package week2.library_task;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by SmooZzzie on 27.04.2017.
@@ -15,13 +16,8 @@ public class Reader implements Comparable<Reader> {
     private String surname;
     private boolean isBanned;
 
-    private ArrayList<Edition> readerEditions;
+    private List<Edition> readerEditions;
 
-    public Reader() {
-        name = "TestName";
-        surname = "TestSurname";
-        readerEditions = new ArrayList<>(MAX_QUANTITY_OF_EDITIONS);
-    }
 
     public Reader(String name) {
         this.name = name;
@@ -52,13 +48,13 @@ public class Reader implements Comparable<Reader> {
         return isBanned;
     }
 
-    public ArrayList<Edition> getReaderEditions() {
+    public List<Edition> getReaderEditions() {
         return readerEditions;
     }
 
     public boolean addEdition(Edition edition) {
 
-        if (edition == null || edition.getQuantity() == 0 || isBanned == true)
+        if (edition == null || edition.getQuantity() == 0 || isBanned)
             return false;
 
         readerEditions.add(edition);

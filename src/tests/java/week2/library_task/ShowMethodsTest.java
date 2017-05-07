@@ -19,10 +19,10 @@ public class ShowMethodsTest {
         Edition edition8 = new Book("Boweok3", 2016, "Qwauthor3", BookGenre.ENCYCLOPEDIA);
         Edition edition9 = new Book("Bweook3", 2002, "Aut5", BookGenre.ENCYCLOPEDIA);
         Edition edition10 = new Book("Boowek3", 1990, "Qwau", BookGenre.ENCYCLOPEDIA);
-        Edition edition11 = new Book();
-        Edition edition12 = new Periodical();
+        Edition edition11 = new Book("TESTNAME",0000,"TESTNAME",BookGenre.ENCYCLOPEDIA);
+        Edition edition12 = new Periodical("TESTNAME",1243,PeriodicalType.COMICS,Periodicity.DAILY);
 
-        Reader reader1 = new Reader();
+        Reader reader1 = new Reader("TESTNAME","TESTSURNAME");
         Reader reader2 = new Reader("Reaaader3", "Surrea");
         Reader reader3 = new Reader("Rwweader1", "Surreader1");
         Reader reader4 = new Reader("Readdfer2", "Surreader2");

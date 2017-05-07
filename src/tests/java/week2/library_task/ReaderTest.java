@@ -18,8 +18,8 @@ public class ReaderTest {
     @Before
     public void setUp() {
 
-        testReader = new Reader();
-        testEdition = new Book();
+        testReader = new Reader("TESTNAME", "TESTSURNAME");
+        testEdition = new Book("TESTNAME",0000,"TESTNAME",BookGenre.ENCYCLOPEDIA);
 
         testReader2 = new Reader("testName", "testSurname", true);
         testEdition2 = null;

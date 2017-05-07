@@ -21,7 +21,7 @@ public class EditionTest {
     @Before
     public void setUp() {
 
-        testEdition1 = new Book();
+        testEdition1 = new Book("TESTNAME",0000,"TESTNAME",BookGenre.ENCYCLOPEDIA);
         testEdition2 = new Book("testName1", 1111, 0, "testAuthor", BookGenre.RELIGIOUS);
 
         testReader1 = null;

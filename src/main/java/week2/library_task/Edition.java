@@ -2,6 +2,7 @@ package week2.library_task;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by SmooZzzie on 27.04.2017.
@@ -14,7 +15,7 @@ public abstract class Edition implements Comparable<Edition> {
     private int yearOfPublishing;
     private int quantity;
 
-    private ArrayList<Reader> editionReaders;
+    private List<Reader> editionReaders;
 
     public Edition(String editionName, int yearOfPublishing) {
         this.editionName = editionName;
@@ -30,7 +31,7 @@ public abstract class Edition implements Comparable<Edition> {
         editionReaders = new ArrayList<>(quantity);
     }
 
-    public ArrayList<Reader> getEditionReaders() {
+    public List<Reader> getEditionReaders() {
         return editionReaders;
     }
 

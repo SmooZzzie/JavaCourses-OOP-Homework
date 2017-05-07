@@ -12,25 +12,25 @@ public class Library {
     private static final int MAX_QUANTITY_OF_READERS = 1000;
     private static final int MAX_QUANTITY_OF_EDITIONS = 10000;
 
-    private ArrayList<Reader> readersList = new ArrayList<>(MAX_QUANTITY_OF_READERS);
-    private ArrayList<Edition> editionsList = new ArrayList<>(MAX_QUANTITY_OF_EDITIONS);
+    private List<Reader> readersList = new ArrayList<>(MAX_QUANTITY_OF_READERS);
+    private List<Edition> editionsList = new ArrayList<>(MAX_QUANTITY_OF_EDITIONS);
 
     boolean containsSimilar = false; // supporting variable,
     // using in showEditionsByAuthor() and ShowEditionsByYear()
 
 
-    public ArrayList<Reader> getReadersList() {
+    public List<Reader> getReadersList() {
         return readersList;
     }
 
-    public ArrayList<Edition> getEditionsList() {
+    public List<Edition> getEditionsList() {
         return editionsList;
     }
 
     public void showReaders() {
 
         if (readersList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -41,14 +41,14 @@ public class Library {
         }
     }
 
-    private void MessageAboutEmptiness() {
+    private void messageAboutEmptiness() {
         System.out.println("The list is empty!");
     }
 
     public void showAvailableEditions() {
 
         if (editionsList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -63,38 +63,20 @@ public class Library {
 
     public boolean addReader(Reader newReader) {
 
-        if (newReader == null) return false;
+        if (newReader == null || readersList.contains(newReader)) return false;
 
-        if (readersList.isEmpty()) {
             readersList.add(newReader);
             Collections.sort(readersList);
             return true;
-        }
-
-        if (readersList.contains(newReader)) return false;
-        else {
-            readersList.add(newReader);
-            Collections.sort(readersList);
-            return true;
-        }
 
     }
 
     public boolean addEdition(Edition newEdition) {
-        if (newEdition == null) return false;
+        if (newEdition == null || editionsList.contains(newEdition)) return false;
 
-        if (editionsList.isEmpty()) {
             editionsList.add(newEdition);
             Collections.sort(editionsList);
             return true;
-        }
-
-        if (editionsList.contains(newEdition)) return false;
-        else {
-            editionsList.add(newEdition);
-            Collections.sort(editionsList);
-            return true;
-        }
 
     }
 
@@ -113,7 +95,7 @@ public class Library {
     public void showReadersEditions() {
 
         if (readersList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -134,7 +116,7 @@ public class Library {
     public void showCertainReaderEditions(Reader reader) {
 
         if (readersList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -148,7 +130,7 @@ public class Library {
         System.out.println("\n***" + readerInList.getName() + " " + readerInList.getSurname() + "'s editions*** ");
 
         if (readerInList.getReaderEditions().isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -173,7 +155,7 @@ public class Library {
     public void showEditionsByAuthor(String author) {
 
         if (editionsList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -202,7 +184,7 @@ public class Library {
     public void showEditionsByYear(int year) {
 
         if (editionsList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 
@@ -231,7 +213,7 @@ public class Library {
     public void findEditionByName(String keyWord) {
 
         if (editionsList.isEmpty()) {
-            MessageAboutEmptiness();
+            messageAboutEmptiness();
             return;
         }
 

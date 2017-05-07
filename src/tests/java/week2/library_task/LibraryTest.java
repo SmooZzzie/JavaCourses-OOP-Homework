@@ -27,14 +27,14 @@ public class LibraryTest {
 
         library = new Library();
 
-        testReader1 = new Reader();
+        testReader1 = new Reader("TESTNAME","TESTSURNAME");
         testReader2 = null;
         testReader3 = new Reader("testname3", "testsurname3", true);
         testReader4 = new Reader("testname3", "testsurname3");
 
 
-        testEdition1 = new Book();
-        testEdition2 = new Periodical();
+        testEdition1 = new Book("TESTNAME",0000,"TESTNAME",BookGenre.ENCYCLOPEDIA);
+        testEdition2 = new Periodical("TESTNAME",1111,4,PeriodicalType.COMICS,Periodicity.MONTHLY);
         testEdition3 = null;
         testEdition4 = new Book("testName", 1111, 0, "testAuthor", BookGenre.ENCYCLOPEDIA);
 

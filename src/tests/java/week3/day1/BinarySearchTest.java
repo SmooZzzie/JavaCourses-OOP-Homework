@@ -11,8 +11,6 @@ import week2.library_task.Reader;
  */
 public class BinarySearchTest {
 
-
-
         Comparable[]array;
         Reader testReader1;
 
@@ -20,7 +18,7 @@ public class BinarySearchTest {
     @Before
     public void setUp() {
         array = new Reader[7];
-        testReader1 = new Reader();
+        testReader1 = new Reader("TESTNAME","TESTSURNAME");
     }
 
     @After

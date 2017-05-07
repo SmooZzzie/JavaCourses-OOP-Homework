@@ -8,11 +8,6 @@ public class Periodical extends Edition {
     private PeriodicalType type;
     private Periodicity periodicity;
 
-    public Periodical() {
-        super("testName", 1111);
-        this.type = PeriodicalType.MAGAZINE;
-        this.periodicity = Periodicity.WEEKLY;
-    }
 
     // constructor without quantity
     public Periodical(String editionName, int yearOfPublishing, PeriodicalType type, Periodicity periodicity) {

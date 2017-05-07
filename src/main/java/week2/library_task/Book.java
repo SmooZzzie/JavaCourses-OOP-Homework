@@ -8,11 +8,6 @@ public class Book extends Edition{
     private String author;
     private BookGenre genre;
 
-    public Book() {
-        super("testName",1111);
-        this.author = "TestAuthor";
-        this.genre = BookGenre.FICTION;
-    }
 
     // constructor with default quantity
     public Book(String editionName, int yearOfPublishing, String author, BookGenre genre) {
