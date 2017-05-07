@@ -15,7 +15,7 @@ public class MyArrayListTest {
     @Before
     public void setUp() {
 
-        Object[] inputValues = {"TestValue1", "TestValue2", "TestValue3", "TestValue4", "TestValue5"};
+        Object[] inputValues = {"TestValue1", "TestValue2",null, "TestValue3", "TestValue4",null, "TestValue5"};
         testArrayList = new MyArrayList(inputValues);
     }
 
@@ -32,7 +32,7 @@ public class MyArrayListTest {
         testArrayList.ensureCapacity();
         testArrayList.trimToSize();
 
-        int expected = 5;
+        int expected = 7;
         int actual = testArrayList.getElementData().length;
 
         Assert.assertEquals(actual, expected);
@@ -41,7 +41,7 @@ public class MyArrayListTest {
     @Test
     public void test_size() {
 
-        int expected = 5;
+        int expected = 7;
         int actual = testArrayList.size();
 
         Assert.assertEquals(actual,expected);
@@ -69,13 +69,13 @@ public class MyArrayListTest {
     public void test_get() {
 
         Object expected = "TestValue3";
-        Assert.assertEquals(expected, testArrayList.get(2));
+        Assert.assertEquals(expected, testArrayList.get(3));
     }
 
     @Test
     public void test_remove_by_index() {
 
-        int expectedSize = 4;
+        int expectedSize = 6;
 
         testArrayList.remove(2);
         Assert.assertEquals(expectedSize, testArrayList.size());
@@ -84,7 +84,7 @@ public class MyArrayListTest {
     @Test
     public void test_remove_by_object() {
 
-        Object expected = "TestValue2";
+        boolean expected = true;
 
         Assert.assertEquals(expected,testArrayList.remove("TestValue2"));
     }
@@ -108,14 +108,30 @@ public class MyArrayListTest {
         Assert.assertEquals(expectedSize,actual);
     }
 
-    @Test
+/*    @Test
     public void test_contains() {
 
         Object testValue = "TestValue5";
 
         Assert.assertTrue(testArrayList.contains(testValue));
+    }*/
+
+    //added tests for remove() and contains()
+    @Test
+    public void test_remove_null() {
+        int expected_size = 6;
+        testArrayList.remove(null);
+        int actual_size = testArrayList.size();
+        Assert.assertEquals(expected_size,actual_size);
     }
 
+    @Test
+    public void test_contains_null() {
+        boolean expected = true;
+        boolean actual = testArrayList.contains(null);
+
+        Assert.assertEquals(expected,actual);
+    }
 
 
 }

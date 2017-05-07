@@ -175,26 +175,34 @@ public class MyArrayList {
     * @param removing object
     * @return boolean value if an element was removed or not
      */
-    public Object remove(Object o) {
+    public boolean remove(Object o) {
 
-        if (isEmpty()) return null;
+        if (isEmpty()) return false;
 
-        Object oldElement;
-
-        for (int i = 0; i < actualSize; i++) {
-            if (elementData[i].equals(o)) {
-
-                oldElement = elementData[i];
-                elementData[i] = null;
-                System.arraycopy(elementData, i + 1, elementData, i, actualSize - i - 1);
-                elementData[actualSize-- - 1] = null;
-                return oldElement;
-            }
+        if (o == null) {
+            for (int index = 0; index < actualSize; index++)
+                if (elementData[index] == null) {
+                    delete(index);
+                    return true;
+                }
+        } else {
+            for (int index = 0; index < actualSize; index++)
+                if (o.equals(elementData[index])) {
+                    delete(index);
+                    return true;
+                }
         }
-
-        return null;
+        return false;
     }
 
+
+    public void delete(int index) {
+        int numMoved = actualSize - index - 1;
+        if (numMoved > 0)
+            System.arraycopy(elementData, index+1, elementData, index,
+                    numMoved);
+        elementData[--actualSize] = null;
+    }
     /*
     * Replaces an element from elementData[] to the new element by index.
     * Firstly, checking an index. Then creates an additional object and assigns elementData[index] to it.
@@ -240,7 +248,7 @@ public class MyArrayList {
         if (isEmpty()) return false;
 
         for (int i = 0; i < actualSize; i++) {
-            if (elementData[i].equals(o)) return true;
+            if ((elementData[i] == null && o == null) || elementData[i].equals(o)) return true;
         }
 
         return false;
