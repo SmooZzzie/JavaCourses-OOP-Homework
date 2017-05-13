@@ -2,6 +2,7 @@ package week3.singleListReversion;
 
 public class ListUtils {
 
+
     public static A<String> createStringList() {
         A<String> head = new Node<>("A");
         A<String> second = new Node<>("B");
@@ -18,6 +19,8 @@ public class ListUtils {
         sixth.setNext(seventh);
         return head;
     }
+
+
 
     public static <T> A<T> reversion(A<T> head) {
 //        todo write your code
